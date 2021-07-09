@@ -20,15 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="MenuSequence.h" />
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuSequence.cpp" />
     <ClCompile Include="Sequence.cpp" />
+    <ClCompile Include="GameManager.h" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

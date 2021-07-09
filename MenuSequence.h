@@ -10,8 +10,12 @@ public:
 	virtual ~MenuSequence();
 
 	virtual void start(); // redefinition of base class' function
+
 private:
+
 protected:
+
 };
 
 #endif
+ 
