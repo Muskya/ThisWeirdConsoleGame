@@ -6,15 +6,13 @@
 class MenuSequence : public Sequence
 {
 public:
-	MenuSequence();
-	virtual ~MenuSequence();
+    MenuSequence();
+    ~MenuSequence();
 
-	virtual void start(); // redefinition of base class' function
-
+    static void start();
 private:
-
 protected:
-
+	 
 };
 
 #endif

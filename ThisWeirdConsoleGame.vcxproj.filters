@@ -13,14 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Sequence">
+      <UniqueIdentifier>{26eb9bb1-cf66-417f-ad5c-1d9b84dadbda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sequence">
+      <UniqueIdentifier>{40661197-8484-4593-aea4-ada28bc09db2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sequence.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuSequence.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -30,14 +30,20 @@
     <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MenuSequence.h">
+      <Filter>Header Files\Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence.h">
+      <Filter>Header Files\Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionSequence.h">
+      <Filter>Header Files\Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="NewgameSequence.h">
+      <Filter>Header Files\Sequence</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sequence.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuSequence.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -52,6 +58,18 @@
     </ClCompile>
     <ClCompile Include="GameManager.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSequence.cpp">
+      <Filter>Source Files\Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence.cpp">
+      <Filter>Source Files\Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionSequence.cpp">
+      <Filter>Source Files\Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="NewgameSequence.cpp">
+      <Filter>Source Files\Sequence</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
