@@ -1,7 +1,10 @@
 #pragma once
 #include "Sequence.h"
-class NewgameSequence :
-    public Sequence
+#include "MenuSequence.h"
+
+class NewgameSequence : public Sequence
 {
+public:
+	static void start();
 };
 

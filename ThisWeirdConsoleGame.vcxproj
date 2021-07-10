@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BeepMusic.h" />
     <ClInclude Include="Character.h" />
-    <ClInclude Include="Enemy.h" />
     <ClInclude Include="MenuSequence.h" />
     <ClInclude Include="NewgameSequence.h" />
     <ClInclude Include="OptionSequence.h" />
@@ -29,7 +29,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
-    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuSequence.cpp" />
     <ClCompile Include="NewgameSequence.cpp" />

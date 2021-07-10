@@ -3,6 +3,8 @@
 #include <string>
 // User Classes Includes
 #include "GameManager.h"
+#include "Character.h"
+#include "BeepMusic.h"
 	// Sequences
 	#include "MenuSequence.h"
 	#include "NewgameSequence.h"

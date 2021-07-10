@@ -6,13 +6,7 @@
 class OptionSequence : public Sequence
 {
 public:
-	OptionSequence();
-	~OptionSequence();
-
 	static void start();
-private:
-protected:
-	
 };
 
 #endif

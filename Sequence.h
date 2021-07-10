@@ -1,27 +1,18 @@
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
 
-// C Standard Library Includes
+// C Standard Library / Other Includes 
 #include <string>
-#include <Windows.h>
+#include <stdlib.h> // For clearing console
 
 // User Classes Includes
 
-class Sequence
-{
+class Sequence {
 public:
 	Sequence();
-	virtual ~Sequence();		// destructors always virtual
-
-	static int _seqID;
+	~Sequence();
 protected:
-	virtual void start() = 0;	// starts the sequence.
-	/* I'm hesitating to make a stop() or changeSequence() function 
-	but I think start() is enough since the sequences are looped until
-	_completed is set to True. Will see later. */
-
-	// Primitive Types
-	bool _completed;
+	virtual void start() = 0; 
 };
 
 #endif

@@ -5,14 +5,6 @@
 
 using namespace std;
 
-OptionSequence::OptionSequence() {
-
-}
-
-OptionSequence::~OptionSequence() {
-
-}
-
 void OptionSequence::start() {
 	char input;
 	cout << "           ---Options---           " << endl;
@@ -25,9 +17,10 @@ void OptionSequence::start() {
 
 	cout << "\n"; cout << "\n"; 
 
-	cout << "Choose an option: " << endl;
+	cout << "Choose an option: " << flush;
 	do { cin >> input; } while (input != '1' && input != '2' && input != '3' 
 		&& input != '4');
+	system("CLS");
 
 	switch (input) 
 	{

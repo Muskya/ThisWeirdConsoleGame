@@ -19,11 +19,10 @@ MenuSequence::~MenuSequence()
 	   MenuSequence object is deleted. */
 }
 
-
 void MenuSequence::start()
 {
 	char input;
-	cout << "	 --- Main Menu ---   " << endl;
+	cout << "	 ---Main Menu---   " << endl;
 	cout << "1. Start a new game" << endl;
 	cout << "2. Load a game" << endl;
 	cout << "3. Options" << endl;
@@ -32,12 +31,13 @@ void MenuSequence::start()
 	cout << "                                      " << endl;
 	cout << "                                      " << endl;
 
-	cout << "Choose an option: " << endl;
+	cout << "Choose an option: " << flush;
 	do { cin >> input; } while (input != '1' && input != '2' && input != '3');
+	system("CLS"); // Clears the console
 
 	switch (input) {
 	case '1':
-		// sequence transition to NewgameSequence
+		NewgameSequence::start();
 		break;
 	case '2':
 		// sequence transition to LoadgameSequence
