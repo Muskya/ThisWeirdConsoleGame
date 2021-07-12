@@ -25,8 +25,10 @@ public:
 	//static members
 	static int nbChar;
 
+	Character() = default;
 	Character(std::string name);
 	Character(std::string name, int health);
+	Character(std::string name, int health, int level, int exp, int stg, int def, int cha, int cla);
 	virtual ~Character();
 
 	void attack(Character* target);
@@ -37,6 +39,7 @@ public:
 
 	// Accessors / Mutators
 	int getHealth();
+	std::string getName();
 	virtual Weapon* getRightHand();
 };
 

@@ -6,7 +6,7 @@
 class OptionSequence : public Sequence
 {
 public:
-	static void start();
+	static void start(Character* character);
 };
 
 #endif

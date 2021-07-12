@@ -5,7 +5,8 @@
 class GameManager
 {
 public: // Everything should be public there
-	enum class GameState { Playing };
+	// Might not use Menuing, Inventoring, Quitting, Combatting
+	enum class GameState { Playing, Menuing, Inventoring, Quitting, Combatting };
 	static GameState g_state;
 };
 

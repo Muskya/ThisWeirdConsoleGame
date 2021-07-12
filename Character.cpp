@@ -8,6 +8,10 @@ using namespace std;
 //static member can't be initialized in class
 int Character::nbChar = 0;
 
+Character::Character(std::string name, int health, int level, int exp, int stg, int def, int cha, int cla)
+	: name(name), health(health), level(level), exp(exp), stg(stg), def(def), cha(cha), cla(cla), rightHand(0) {
+
+}
 
 Character::~Character() {
 	nbChar--;
@@ -39,6 +43,10 @@ void Character::status() {
 }
 bool Character::isDead() const {
 	return (this->health <= 0);
+}
+
+std::string Character::getName() {
+	return name;
 }
 
 int Character::getHealth() {

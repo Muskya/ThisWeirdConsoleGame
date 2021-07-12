@@ -19,7 +19,7 @@ MenuSequence::~MenuSequence()
 	   MenuSequence object is deleted. */
 }
 
-void MenuSequence::start()
+void MenuSequence::start(Character* character)
 {
 	char input;
 	cout << "	 ---Main Menu---   " << endl;
@@ -37,14 +37,14 @@ void MenuSequence::start()
 
 	switch (input) {
 	case '1':
-		NewgameSequence::start();
+		NewgameSequence::start(character);
 		break;
 	case '2':
 		// sequence transition to LoadgameSequence
 		break;
 	case '3':
 		// sequence transition to OptionSequence
-		OptionSequence::start();
+		OptionSequence::start(character);
 		break;
 	}
 }

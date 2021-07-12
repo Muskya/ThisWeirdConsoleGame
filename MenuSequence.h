@@ -9,7 +9,7 @@ public:
     MenuSequence();
     ~MenuSequence();
 
-    static void start();
+    static void start(Character* character);
 private:
 protected:
 	 

@@ -6,6 +6,7 @@
 #include <stdlib.h> // For clearing console
 
 // User Classes Includes
+#include "Character.h"
 
 class Sequence {
 public:

@@ -1,10 +1,12 @@
+// C Standard Library Includes
 #include <iostream>
 
+// User Headers Includes
 #include "NewgameSequence.h"
 
 using namespace std;
 
-void NewgameSequence::start() {
+void NewgameSequence::start(Character* character) {
 	char input;
 characterCreation:
 	cout << "     ---Character Creation---     " << endl;
@@ -29,15 +31,17 @@ characterCreation:
 		cout << "Statistics:" << endl;
 		cout << "-Strength: 11" << endl;
 		cout << "-Defense: 9" << endl;
-		cout << "-Chance: 6" << endl;
-		cout << "-Clarity: 7" << endl;
+		cout << "-Chance: 5" << endl;
+		cout << "-Clarity: 3" << endl;
 		cout << "\n Create a new game with this class ? (Y/N) " << flush;
 		do { cin >> input; } while (input != 'Y' && input != 'N' && input != 'y'
 			&& input != 'n');
 		system("CLS");
 
 		if (input == 'Y' || input == 'y') {
-			//Serializes data
+			std::string name;
+			cout << "Choose your name: " << endl; cin >> name;
+			character = new Character(name, 30, 1, 0, 11, 9, 5, 3);
 			//Starts Intro/Sequence/Level 01
 		}
 		else {
@@ -59,7 +63,7 @@ characterCreation:
 
 		break;
 	case '4': // Goes back to menu
-		MenuSequence::start();
+		MenuSequence::start(character);
 		break;
 	}
 

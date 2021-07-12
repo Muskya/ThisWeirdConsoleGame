@@ -34,9 +34,9 @@ bool Weapon::isBroken() const {
 string Weapon::getName() const {
 	return this->_name;
 }
-float Weapon::getDurability() const {
+int Weapon::getDurability() const {
 	return this->_durability;
 }
-float Weapon::getDamage() const {
+int Weapon::getDamage() const {
 	return this->_damage;
 }

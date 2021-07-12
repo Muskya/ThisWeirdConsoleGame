@@ -9,8 +9,8 @@ private:
 
 protected:
 	std::string _name;
-	float _durability;
-	float _damage;
+	int _durability;
+	int _damage;
 public:
 	static int weapNb;
 
@@ -23,8 +23,8 @@ public:
 
 	//accessers
 	std::string getName() const;
-	float getDurability() const;
-	float getDamage() const;
+	int getDurability() const;
+	int getDamage() const;
 };
 
 #endif 

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void OptionSequence::start() {
+void OptionSequence::start(Character* character) {
 	char input;
 	cout << "           ---Options---           " << endl;
 	cout << "									" << endl;
@@ -25,7 +25,7 @@ void OptionSequence::start() {
 	switch (input) 
 	{
 	case '4':
-		MenuSequence::start();
+		MenuSequence::start(character);
 		break;
 	}
 }
