@@ -8,7 +8,7 @@ using namespace std;
 
 void NewgameSequence::start(Character* character) {
 	char input;
-characterCreation:
+characterCreation: // Goto point if class selection confirmation is cancelled
 	cout << "     ---Character Creation---     " << endl;
 	cout << "Choose your class: " << endl;
 	cout << "1. Wanderer" << endl;
@@ -42,10 +42,10 @@ characterCreation:
 			std::string name;
 			cout << "Choose your name: " << endl; cin >> name;
 			character = new Character(name, 30, 1, 0, 11, 9, 5, 3);
-			//Starts Intro/Sequence/Level 01
+			// Should save/serialize before starting first act
+			Level01Sequence::start(character);
 		}
 		else {
-			//NewgameSequence::start(); // Goes back to class selection
 			goto characterCreation;
 		}
 		break;

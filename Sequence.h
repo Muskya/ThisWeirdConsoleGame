@@ -7,6 +7,8 @@
 
 // User Classes Includes
 #include "Character.h"
+#include "BeepMusic.h"
+#include "GameManager.h"
 
 class Sequence {
 public:
@@ -14,6 +16,7 @@ public:
 	~Sequence();
 protected:
 	virtual void start() = 0; 
+	std::string sequenceName;
 };
 
 #endif

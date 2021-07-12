@@ -15,7 +15,7 @@ MenuSequence::MenuSequence() : Sequence()
 
 MenuSequence::~MenuSequence()
 {
-	/* Delete/Free some objects before this 
+	/* Delete/Free some pointed fields before this 
 	   MenuSequence object is deleted. */
 }
 
@@ -26,13 +26,12 @@ void MenuSequence::start(Character* character)
 	cout << "1. Start a new game" << endl;
 	cout << "2. Load a game" << endl;
 	cout << "3. Options" << endl;
-	cout << "                                      " << endl;
-	cout << "                            By Theo R." << endl;
-	cout << "                                      " << endl;
-	cout << "                                      " << endl;
+	cout << "4. Quit" << endl;
+	cout << "\n\n\t\t\t By Theo R." << endl;
+	 
 
 	cout << "Choose an option: " << flush;
-	do { cin >> input; } while (input != '1' && input != '2' && input != '3');
+	do { cin >> input; } while (input != '1' && input != '2' && input != '3' && input != '4');
 	system("CLS"); // Clears the console
 
 	switch (input) {
@@ -46,5 +45,7 @@ void MenuSequence::start(Character* character)
 		// sequence transition to OptionSequence
 		OptionSequence::start(character);
 		break;
+	case '4':
+		// Fully exits the program (any serialization / security handle first ?)
 	}
 }

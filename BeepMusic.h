@@ -31,31 +31,10 @@
 
 class BeepMusic {
 public:
-    // Example Music Loop
-	static void ExamplePlay() {
-        int i = 0;
-        while (i++ < 2) {
-            //1
-            Beep(Z6, T8);
-            Beep(Z6, T6);
-            Beep(Z5, T2);
-            Beep(Z6, T4);
-            Beep(Z5, T4);
-            Beep(Z3, T8);
-            //2
-            Beep(Z5, T4);
-            Beep(Z3, T4);
-            Beep(Z3, T8);
-            Beep(Z3, T16);
-            //3
-            Beep(Z2, T8);
-            Beep(Z2, T6);
-            Beep(Z1, T2);
-            Beep(Z2, T4);
-            Beep(Z2, T4);
-            Beep(Z5, T8);
-        }
-	}
+    static void SuspenseDoubleBeep() {
+        Beep(Z3, T2);
+        Beep(Z1, T2); 
+    }
 };
 
 

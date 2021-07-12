@@ -45,6 +45,9 @@
     <ClInclude Include="Serialization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Level01Sequence.h">
+      <Filter>Header Files\Sequence</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files\Sequence</Filter>
     </ClCompile>
     <ClCompile Include="NewgameSequence.cpp">
+      <Filter>Source Files\Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Level01Sequence.cpp">
       <Filter>Source Files\Sequence</Filter>
     </ClCompile>
   </ItemGroup>
