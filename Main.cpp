@@ -6,13 +6,11 @@
 	// System
 #include "GameManager.h"
 #include "BeepMusic.h"
-#include "Serialization.h"
 	// Entities
 #include "Character.h"
-	// Sequences
-#include "MenuSequence.h"
-#include "NewgameSequence.h"
-#include "OptionSequence.h"
+	// Sequence
+#include "Sequence.h"
+
 
 using namespace std; // Will only be using standard namespace
 
@@ -35,6 +33,7 @@ int main()
 
 	// Game Loop
 	while (g_state == GM_PLAYING) {
-		MenuSequence::start(character);
+		Sequence::startMenuSequence(character);
+		//Sequence::startSequence01(character);
 	}
 }

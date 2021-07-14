@@ -5,16 +5,12 @@
 
 using namespace std;
 
-//static member can't be initialized in class
-int Character::nbChar = 0;
-
-Character::Character(std::string name, int health, int level, int exp, int stg, int def, int cha, int cla)
+Character::Character(std::string name, int health, int level,
+	int exp, int stg, int def, int cha, int cla)
 	: name(name), health(health), level(level), exp(exp), stg(stg), def(def), cha(cha), cla(cla), rightHand(0) {
 
 }
-
 Character::~Character() {
-	nbChar--;
 	//deletes all pointers from this class first
 	delete rightHand;
 }
@@ -41,19 +37,15 @@ void Character::status() {
 	cout << "Right hand: " << this->rightHand->getName() << endl;
 	cout << "\n";
 }
-bool Character::isDead() const {
-	return (this->health <= 0);
-}
+bool Character::isDead() const { return (this->health <= 0); }
 
-std::string Character::getName() {
-	return name;
-}
-
-int Character::getHealth() {
-	return health;
-}
-
-//returns a pointers to our right hand weap
-Weapon* Character::getRightHand() {
-	return this->rightHand;
-}
+// Accessors / Mutators
+std::string Character::getName() { return name; }
+int Character::getHealth() { return health; }
+int Character::getLevel() { return level; }
+int Character::getExp() { return exp; }
+int Character::getStg() { return stg; }
+int Character::getDef() { return def; }
+int Character::getCha() { return cha; }
+int Character::getCla() { return cla; }
+Weapon* Character::getRightHand() { return rightHand; }

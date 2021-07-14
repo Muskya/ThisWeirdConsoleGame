@@ -1,0 +1,2 @@
+- Serialization base structure
+- Combat/Fighting class to close-up Sequence01

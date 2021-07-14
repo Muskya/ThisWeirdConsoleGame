@@ -1,10 +1,12 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include "Weapon.h"
-
+// C++/C Standard Library Includes
 #include <iostream>
 #include <string>
+
+// User Headers Includes
+#include "Weapon.h"
 
 class Character
 {
@@ -12,8 +14,7 @@ private:
 protected:
 	//inherited fields
 	std::string name;
-	int level, exp;
-	int health;
+	int level, exp, health;
 	int stg, def, cha, cla;
 
 	Weapon* rightHand; //offensive
@@ -22,10 +23,7 @@ protected:
 	virtual void takeDamage(int amount);
 
 public:
-	//static members
-	static int nbChar;
-
-	Character() = default;
+	Character() = default; // So we don't have to write it in .cpp (?)
 	Character(std::string name);
 	Character(std::string name, int health);
 	Character(std::string name, int health, int level, int exp, int stg, int def, int cha, int cla);
@@ -38,8 +36,10 @@ public:
 	virtual void status();
 
 	// Accessors / Mutators
-	int getHealth();
 	std::string getName();
+	int getHealth();  int getLevel(); int getExp();
+	int getStg(); int getDef(); int getCha(); int getCla();
+
 	virtual Weapon* getRightHand();
 };
 

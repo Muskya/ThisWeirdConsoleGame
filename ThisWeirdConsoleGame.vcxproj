@@ -40,6 +40,9 @@
     <ClCompile Include="GameManager.h" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Roadmap.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

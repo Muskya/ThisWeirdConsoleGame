@@ -12,12 +12,17 @@
 
 class Serialization {
 private:
-	
+	inline static bool isFileEmpty(std::wstring path, std::ofstream& savefile) {
+		savefile.seekp(0, std::ios::end); // Goes to file's last position
+		int pos = (int)savefile.tellp(); // Fetches current position
+		if (pos == 0) // If it's 0, file is empty.
+			return true;
+		return false;
+	}
 public:
-	bool saveExists = false;
+	static bool saveExists;
 
 	inline static void Save(std::wstring path, Character* character) {
-		
 		std::ofstream savefile(path); // Opens a file output stream from the passed path
 
 		// Fetching date and time
@@ -30,6 +35,9 @@ public:
 		}
 		else {
 			savefile << locale_time;
+			savefile << "Character name: " << character->getName();
+			savefile << "Character level: " << character->getLevel();
+			savefile << "Experience points: " << character->getExp();
 		}
 	}
 

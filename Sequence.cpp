@@ -11,7 +11,7 @@ void Sequence::startMenuSequence(Character* character)
 	cout << "1. Start a new game" << endl;
 	cout << "2. Load a game" << endl;
 	cout << "3. Options" << endl;
-	cout << "4. Save" << endl;
+	cout << "4. Quit (Not implemented yet)" << endl;
 	cout << "\n\n\t\t\t By Theo R." << endl;
 
 
@@ -28,7 +28,7 @@ void Sequence::startMenuSequence(Character* character)
 		break;
 	case '3':
 		// sequence transition to OptionSequence
-		Sequence::startOptionSequence();
+		Sequence::startOptionSequence(character);
 		break;
 	case '4':
 		// Fully exits the program (any serialization / security handle first ?)
@@ -98,7 +98,8 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 			cout << "Choose your name: " << endl; cin >> name;
 			character = new Character(name, 30, 1, 0, 11, 9, 5, 3);
 			// Should save/serialize before starting first act
-			Sequence::startSequence01(character);
+			Serialization::Save(PROJECT_DIR, character);
+			//Sequence::startSequence01(character);
 		}
 		else {
 			goto characterCreation;
@@ -118,23 +119,26 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 
 		break;
 	case '4': // Goes back to menu
-		Sequence::startMenuSequence();
+		Sequence::startMenuSequence(character);
 		break;
 	}
-
 }
 
 void Sequence::startSequence01(Character* character) {
-	cout << ". . . . . ." << endl;
+	cout << ". . . . . . . . . . . ." << endl;
 	BeepMusic::SuspenseDoubleBeep();
-	system("pause");
+	system("pause"); // Asks user to input a key to continue
 
 	cout << ". . . . . . . . . . . ." << endl;
 	BeepMusic::SuspenseDoubleBeep();
 	system("pause");
-	cout << "\nHello ?...\n" << endl;
 
+	cout << "\nHello ?..." << endl;
+	cout << "Oh. There you are. I thought we would never find you !" << endl;
+	system("pause");
+	cout << "\n> Where am I ?" << endl;
+	cout << "You lost consciousness hours ago. Take my hand !" << endl;
+	system("pause");
 
-
-	system("exit");
+	// Starts a combat here (scenario details...)
 }
