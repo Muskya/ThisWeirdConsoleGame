@@ -29,21 +29,13 @@
   <ItemGroup>
     <ClInclude Include="BeepMusic.h" />
     <ClInclude Include="Character.h" />
-    <ClInclude Include="Level01Sequence.h" />
-    <ClInclude Include="MenuSequence.h" />
-    <ClInclude Include="NewgameSequence.h" />
-    <ClInclude Include="OptionSequence.h" />
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="Serialization.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
-    <ClCompile Include="Level01Sequence.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MenuSequence.cpp" />
-    <ClCompile Include="NewgameSequence.cpp" />
-    <ClCompile Include="OptionSequence.cpp" />
     <ClCompile Include="Sequence.cpp" />
     <ClCompile Include="GameManager.h" />
     <ClCompile Include="Weapon.cpp" />

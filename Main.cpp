@@ -5,8 +5,8 @@
 /* User Headers Includes */
 	// System
 #include "GameManager.h"
-#include "Serialization.h"
 #include "BeepMusic.h"
+#include "Serialization.h"
 	// Entities
 #include "Character.h"
 	// Sequences

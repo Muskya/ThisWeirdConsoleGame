@@ -1,7 +1,7 @@
 #ifndef SERIALIZATION_H
 #define SERIALIZATION_H
 
-// C Standard Library Includes
+// C++/C Standard Library Includes
 #include <iostream>
 #include <fstream> // File I/O
 #include <time.h> // Time
@@ -17,7 +17,7 @@ public:
 	bool saveExists = false;
 
 	inline static void Save(std::wstring path, Character* character) {
-		//std::string lastSequenceDone = Sequence::getLastSequenceDone();
+		
 		std::ofstream savefile(path); // Opens a file output stream from the passed path
 
 		// Fetching date and time
@@ -30,7 +30,6 @@ public:
 		}
 		else {
 			savefile << locale_time;
-			//savefile << lastSequenceDone;
 		}
 	}
 

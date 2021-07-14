@@ -1,22 +1,24 @@
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
 
-// C Standard Library / Other Includes 
+// C/C++ Standard Library
 #include <string>
 #include <stdlib.h> // For clearing console
 
-// User Classes Includes
+// User Headers Includes
 #include "Character.h"
 #include "BeepMusic.h"
 #include "GameManager.h"
 
 class Sequence {
 public:
-	Sequence();
+	Sequence() = default;
 	~Sequence();
-protected:
-	virtual void start() = 0; 
-	std::string sequenceName;
+
+	static void startMenuSequence(Character* character);
+	static void startNewgameSequence(Character* character);
+	static void startOptionSequence(Character* character);
+	static void startSequence01(Character* character);
 };
 
 #endif
