@@ -10,8 +10,8 @@
 #include "Character.h"
 #include "BeepMusic.h"
 #include "GameManager.h"
+#include "Duel.h"
 
-// Basically a static class
 class Sequence {
 public:
 	Sequence() = default;

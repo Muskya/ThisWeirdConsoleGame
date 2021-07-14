@@ -30,6 +30,9 @@
     <ClInclude Include="Sequence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Duel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="Sequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Duel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

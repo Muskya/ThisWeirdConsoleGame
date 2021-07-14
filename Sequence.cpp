@@ -1,8 +1,8 @@
 #include "Sequence.h"
+using namespace std;
+
 
 Sequence::~Sequence() {}
-
-using namespace std;
 
 void Sequence::startMenuSequence(Character* character)
 {
@@ -13,7 +13,6 @@ void Sequence::startMenuSequence(Character* character)
 	cout << "3. Options" << endl;
 	cout << "4. Quit (Not implemented yet)" << endl;
 	cout << "\n\n\t\t\t By Theo R." << endl;
-
 
 	cout << "Choose an option: " << flush;
 	do { cin >> input; } while (input != '1' && input != '2' && input != '3' && input != '4');
@@ -35,7 +34,6 @@ void Sequence::startMenuSequence(Character* character)
 		break;
 	}
 }
-
 void Sequence::startOptionSequence(Character* character) {
 	char input;
 	cout << "           ---Options---           " << endl;
@@ -60,7 +58,6 @@ void Sequence::startOptionSequence(Character* character) {
 		break;
 	}
 }
-
 void Sequence::startNewgameSequence(Character* character) {
 	char input;
 characterCreation: // Goto point if class selection confirmation is cancelled
@@ -84,6 +81,7 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 		cout << "Wanderers can choose the path of their choice." << endl;
 		cout << "----------------------------------------------" << endl;
 		cout << "Statistics:" << endl;
+		cout << "-Health: 80" << endl;
 		cout << "-Strength: 11" << endl;
 		cout << "-Defense: 9" << endl;
 		cout << "-Chance: 5" << endl;
@@ -95,11 +93,12 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 
 		if (input == 'Y' || input == 'y') {
 			std::string name;
-			cout << "Choose your name: " << endl; cin >> name;
-			character = new Character(name, 30, 1, 0, 11, 9, 5, 3);
-			// Should save/serialize before starting first act
+			cout << "Choose your name: " << flush; cin >> name;
+			system("CLS");
+			character = new Character(name, 80, 1, 0, 11, 9, 5, 3);
+
 			Serialization::Save(PROJECT_DIR, character);
-			//Sequence::startSequence01(character);
+			Sequence::startSequence01(character);
 		}
 		else {
 			goto characterCreation;
@@ -123,22 +122,29 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 		break;
 	}
 }
-
 void Sequence::startSequence01(Character* character) {
 	cout << ". . . . . . . . . . . ." << endl;
 	BeepMusic::SuspenseDoubleBeep();
-	system("pause"); // Asks user to input a key to continue
+	system("pause");
 
 	cout << ". . . . . . . . . . . ." << endl;
 	BeepMusic::SuspenseDoubleBeep();
 	system("pause");
 
 	cout << "\nHello ?..." << endl;
-	cout << "Oh. There you are. I thought we would never find you !" << endl;
-	system("pause");
-	cout << "\n> Where am I ?" << endl;
-	cout << "You lost consciousness hours ago. Take my hand !" << endl;
 	system("pause");
 
-	// Starts a combat here (scenario details...)
+	cout << "\nOh. There you are. I thought we would never find you !" << endl;
+	system("pause");
+
+	cout << "\n> Where am I ?" << endl;
+	cout << "\nYou lost consciousness hours ago. Take my hand !" << endl;
+	system("pause");
+
+	// HP10, LV0, XP0, STG1, DEF0, CHA0, CLA0
+	Character* e_d01 = new Character("???", 45, 0, 0, 1, 0, 0, 0);
+	Duel* d01 = new Duel(character, e_d01); // Loop withing Duel object
+	d01->start();
+
+	delete e_d01; delete d01; // Make sure to delete them after duel (win/loss)
 }

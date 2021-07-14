@@ -7,21 +7,30 @@ using namespace std;
 
 Character::Character(std::string name, int health, int level,
 	int exp, int stg, int def, int cha, int cla)
-	: name(name), health(health), level(level), exp(exp), stg(stg), def(def), cha(cha), cla(cla), rightHand(0) {
+	: name(name), health(health), level(level), exp(exp),
+	stg(stg), def(def), cha(cha), cla(cla), rightHand(0) 
+{}
 
-}
+// Mostly used for enemy entities
+Character::Character(int health, int level, int exp, int stg,
+	int def, int cha, int cla) : health(health), level(level),
+	exp(exp), stg(stg), def(def), cha(cha), cla(cla), rightHand(0)
+{}
+
 Character::~Character() {
-	//deletes all pointers from this class first
+	//deletes all pointers from this class
 	delete rightHand;
 }
 
 void Character::attack(Character* target) {
 	cout << this->name << " attacks " << target->name << endl;
-	int dmg = this->getRightHand()->getDamage();
+	//int dmg = this->getRightHand()->getDamage(); When Weapons Are Implemented
+	int dmg = stg - (target->getDef()); // Damage = This->Damage - Target->Def
 	target->takeDamage(dmg);
 }
 
 void Character::takeDamage(int amount) {
+	cout << this->name << " receives " << amount << " damage." << endl;
 	this->health -= amount;
 }
 

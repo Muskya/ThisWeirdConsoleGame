@@ -11,7 +11,6 @@
 	// Sequence
 #include "Sequence.h"
 
-
 using namespace std; // Will only be using standard namespace
 
 #define GM_PLAYING GameManager::GameState::Playing
@@ -24,7 +23,7 @@ int main()
 {
 	// Welcome message
 	cout << "Welcome to the weirdest console game !" << endl;
-	cout << "Be ready to embark on a mysterious adventure... :)\n\n" << endl;
+	cout << "Be ready to embark on a mysterious adventure... :)\n\n\n" << endl;
 
 	// Initializations
 	GameManager::GameState g_state = GM_PLAYING; // Initial game state (Playing)
@@ -34,6 +33,5 @@ int main()
 	// Game Loop
 	while (g_state == GM_PLAYING) {
 		Sequence::startMenuSequence(character);
-		//Sequence::startSequence01(character);
 	}
 }
