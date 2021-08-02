@@ -5,9 +5,8 @@ using namespace std;
 Duel::Duel(Character* player, Character* enemy)
 	: d_done(false), t_done(false), playerFirst(false), turn_nb(0),
 	  player(player), enemy(enemy) 
-{
+{}
 
-}
 Duel::~Duel() 
 {
 	delete enemy;
@@ -21,33 +20,51 @@ void Duel::initiative(bool& playerFirst)
 	else
 		playerFirst = false;
 
-	/* Will add much more calculus to determine whether 
+	/* Will add much more calculus later to determine whether 
 	* player or enemy has initiative. */	
 }
 
 void Duel::playTurns() 
 {
-	while (player->isDead() || enemy->isDead()) 
+	while (!player->isDead() || !enemy->isDead()) 
 	{
 		turn_nb++;
-		cout << "-Turn " << turn_nb;
-		if (playerFirst) {
-			if (!player->isDead())
+		cout << "-Turn " << turn_nb << "-\n" << flush;
+		if (playerFirst) { // If player had initiative
+			if (!player->isDead()) {
 				playerAction();
-			if (!enemy->isDead())
+			}
+			if (!enemy->isDead()) {
 				enemyAction();
+				system("pause");
+			}
 		}
-		else {
-			if (!enemy->isDead())
+		else { // If enemy had initiative
+			if (!enemy->isDead()) {
 				enemyAction();
-			if (!player->isDead())
+				system("pause");
+			}
+			if (!player->isDead()) {
 				playerAction();
+			}
 		}
 	}
+
+	// Victory or Defeat
+	if (player->isDead()) {
+
+	}
+	else if (enemy->isDead()) {
+
+	}
+	
 }
 
 void Duel::start() 
 {
+	// Thread to play the background duel music
+	std::thread bgm(BeepMusic::DuelThemeBeep);
+	system("CLS");
 	this->initiative(playerFirst);
 	while (!d_done)
 	{
@@ -62,9 +79,9 @@ void Duel::playerAction()
 	char input;
 	cout << "Choose an action: " << endl;
 	cout << "1. Attack" << endl;
-	cout << "2. Defend" << endl;
-	cout << "3. Item" << endl;
-	cout << "4. Flee" << endl;
+	cout << "2. Defend (not implemented yet)" << endl;
+	cout << "3. Item (not implemented yet)" << endl;
+	cout << "4. Flee (not implemented yet)\n" << endl;
 	do {
 		cin >> input;
 	} while (input != '1' && input != '2' && input != '3'

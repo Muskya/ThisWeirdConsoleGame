@@ -30,7 +30,7 @@ void Character::attack(Character* target) {
 }
 
 void Character::takeDamage(int amount) {
-	cout << this->name << " receives " << amount << " damage." << endl;
+	cout << this->name << " takes " << amount << " damage.\n" << endl;
 	this->health -= amount;
 }
 
@@ -46,7 +46,12 @@ void Character::status() {
 	cout << "Right hand: " << this->rightHand->getName() << endl;
 	cout << "\n";
 }
-bool Character::isDead() const { return (this->health <= 0); }
+bool Character::isDead() const {
+	if (this->health <= 0)
+		return true;
+	else
+		return false;
+}
 
 // Accessors / Mutators
 std::string Character::getName() { return name; }

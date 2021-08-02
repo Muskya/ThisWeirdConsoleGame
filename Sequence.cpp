@@ -72,7 +72,7 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 	cout << "Choose an option: " << flush;
 	do { cin >> input; } while (input != '1' && input != '2' && input != '3'
 		&& input != '4');
-	system("CLS");
+	system("CLS"); // Always use "<< flush" before a system("") command
 
 	switch (input) {
 	case '1':
@@ -95,6 +95,8 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 			std::string name;
 			cout << "Choose your name: " << flush; cin >> name;
 			system("CLS");
+
+			// HP80, LV1, XP0, STG11, DEF9, CHA5, CLA3
 			character = new Character(name, 80, 1, 0, 11, 9, 5, 3);
 
 			Serialization::Save(PROJECT_DIR, character);
@@ -131,19 +133,18 @@ void Sequence::startSequence01(Character* character) {
 	BeepMusic::SuspenseDoubleBeep();
 	system("pause");
 
-	cout << "\nHello ?..." << endl;
-	system("pause");
-
+	cout << "\n>Hello ?..." << endl;
 	cout << "\nOh. There you are. I thought we would never find you !" << endl;
 	system("pause");
 
 	cout << "\n> Where am I ?" << endl;
 	cout << "\nYou lost consciousness hours ago. Take my hand !" << endl;
-	system("pause");
+	system("pause"); 
 
-	// HP10, LV0, XP0, STG1, DEF0, CHA0, CLA0
-	Character* e_d01 = new Character("???", 45, 0, 0, 1, 0, 0, 0);
+	// HP45, LV0, XP0, STG5, DEF4, CHA0, CLA0
+	Character* e_d01 = new Character("???", 45, 0, 0, 5, 4, 0, 0);
 	Duel* d01 = new Duel(character, e_d01); // Loop withing Duel object
+	cout << "\n";
 	d01->start();
 
 	delete e_d01; delete d01; // Make sure to delete them after duel (win/loss)

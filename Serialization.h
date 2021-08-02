@@ -24,20 +24,21 @@ public:
 
 	inline static void Save(std::wstring path, Character* character) {
 		std::ofstream savefile(path); // Opens a file output stream from the passed path
+									  // ProjectDir (Microsoft) -> savefile.txt
 
 		// Fetching date and time
 		std::time_t time = std::time(0); // stores time as a time_t object.
-		char locale_time[26]; // char instead of string because of ctime_s parameters requirements.
+		char locale_time[26]; // char instead of string because of ctime_s() parameters requirements.
 		ctime_s(locale_time, sizeof locale_time, &time);
 
 		if (!savefile) {
-			std::cout << "Couldn't open savefile.txt" << std::endl;
+			std::cout << "Couldn't open savefile" << std::endl;
 		}
 		else {
 			savefile << locale_time;
-			savefile << "Character name: " << character->getName();
-			savefile << "Character level: " << character->getLevel();
-			savefile << "Experience points: " << character->getExp();
+			savefile << "Character name: " << character->getName() << std::endl;
+			savefile << "Character level: " << character->getLevel() << std::endl;
+			savefile << "Experience points: " << character->getExp() << std::endl;
 		}
 	}
 

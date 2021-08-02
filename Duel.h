@@ -2,6 +2,8 @@
 #define DUEL_H
 
 #include "Character.h"
+#include "BeepMusic.h"
+#include <thread>
 
 class Duel
 {

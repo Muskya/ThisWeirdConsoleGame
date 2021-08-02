@@ -27,7 +27,7 @@ int main()
 
 	// Initializations
 	GameManager::GameState g_state = GM_PLAYING; // Initial game state (Playing)
-	std::wstring path = PROJECT_DIR; // Path to project's working directory (defined in MSVC Project Properties (Preprocessor))
+	// std::wstring path = PROJECT_DIR; // Path to project's working directory (defined in MSVC Project Properties (Preprocessor))
 	Character* character(nullptr); // Initialized after loading/creating a game. DONT FORGET TO DELETE IT.
 
 	// Game Loop
