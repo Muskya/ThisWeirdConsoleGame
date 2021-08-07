@@ -142,10 +142,16 @@ void Sequence::startSequence01(Character* character) {
 	system("pause"); 
 
 	// HP15, LV0, XP0, STG5, DEF4, CHA0, CLA0
-	Character* e_d01 = new Character("???", 15, 0, 0, 5, 4, 0, 0);
-	Duel* d01 = new Duel(character, e_d01); // Loop withing Duel object
-	cout << "\n";
+	Character* e_d01 = new Character("???", 15, 0, 0, 5, 4, 0, 0); // Enemy
+	Duel* d01 = new Duel(character, e_d01); // Duel
 	d01->start();
 
-	delete e_d01; delete d01; // Make sure to delete them after duel (win/loss)
+	delete d01; // Only delete duel. duel's destructor deletes enemy ptr.
+	system("CLS");
+	
+	cout << "\n You fought well, ahaha !" << endl;
+	system("pause");
+
+	cout << "\n> Well, thanks ... ?" << endl;
+	// ... //
 }

@@ -18,6 +18,7 @@ private:
 	void playTurns();
 	void playerAction();
 	void enemyAction(); // A.I
+	void duelWon();
 public:
 	Duel(Character* player, Character* enemy);
 	~Duel();

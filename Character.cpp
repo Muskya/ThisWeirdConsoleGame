@@ -31,6 +31,8 @@ void Character::attack(Character* target) {
 
 void Character::takeDamage(int amount) {
 	this->health -= amount;
+	if (this->health <= 0)
+		this->health = 0;
 	cout << this->name << " takes " << amount << " damage, " <<
 		this->health << "HP left\n" << endl;
 }

@@ -1,3 +1,13 @@
-- tight-spaced random attack values during duels
+*** -> High priority
+** -> Medium priority
+* -> Low priority
+
+***
+- inventory system
+- loot/xp/gold at the end of duel
+
+**
+
+*
 - duel actions beep sounds
 - duel_bgm-like music made in beeps

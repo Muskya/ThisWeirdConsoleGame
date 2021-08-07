@@ -26,37 +26,33 @@ void Duel::initiative(bool& playerFirst)
 
 void Duel::playTurns() 
 {
-	while (!player->isDead() || !enemy->isDead()) 
+	while (!player->isDead() && !enemy->isDead()) 
 	{
 		turn_nb++;
+
 		system("CLS");
 		cout << "-Turn " << turn_nb << "-\n" << flush;
 		if (playerFirst) { // If player had initiative
-			if (!player->isDead()) {
-				playerAction();
-			}
-			if (!enemy->isDead()) {
-				enemyAction();
-				system("pause");
-			}
+			playerAction();
+			enemyAction();
+			system("pause");
 		}
 		else { // If enemy had initiative
-			if (!enemy->isDead()) {
-				enemyAction();
-				system("pause");
-			}
-			if (!player->isDead()) {
-				playerAction();
-			}
+			enemyAction();
+			system("pause");
+			playerAction();
 		}
 	}
 
 	// Victory or Defeat
 	if (player->isDead()) {
-
+		d_done = true;
+		std::cout << "You lost the battle." << std::endl;
 	}
 	else if (enemy->isDead()) {
-
+		d_done = true;
+		std::cout << "You won the battle." << std::endl;
+		// Add looting, gold...
 	}
 }
 
@@ -64,13 +60,14 @@ void Duel::start()
 {
 	// Thread to play the background duel music
 	std::thread bgm(BeepMusic::DuelThemeBeepB);
+	bgm.detach(); // so the bgm is independant
+
 	this->initiative(playerFirst);
 	while (!d_done)
 	{
 		playTurns();
-		if (player->isDead() || enemy->isDead())
-			d_done = true;
 	}
+	system("pause");
 }
 
 void Duel::playerAction() 
@@ -109,5 +106,9 @@ void Duel::enemyAction()
 	enemy->attack(player); 
 
 	/* Will add more scripts for enemy actions */
+}
+
+void Duel::duelWon() {
+
 }
 
