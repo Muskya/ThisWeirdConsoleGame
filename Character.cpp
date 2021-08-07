@@ -23,15 +23,16 @@ Character::~Character() {
 }
 
 void Character::attack(Character* target) {
+	std::srand(std::time(0)); // Random number generator (uses time, C-specific)
 	cout << this->name << " attacks " << target->name << endl;
-	//int dmg = this->getRightHand()->getDamage(); When Weapons Are Implemented
-	int dmg = stg - (target->getDef()); // Damage = This->Damage - Target->Def
+	int dmg = (int)(stg * (target->getDef() / 10) + this->level + (((rand() % 4) + 1)));
 	target->takeDamage(dmg);
 }
 
 void Character::takeDamage(int amount) {
-	cout << this->name << " takes " << amount << " damage.\n" << endl;
 	this->health -= amount;
+	cout << this->name << " takes " << amount << " damage, " <<
+		this->health << "HP left\n" << endl;
 }
 
 void Character::changeWeapon(Weapon* weap) {

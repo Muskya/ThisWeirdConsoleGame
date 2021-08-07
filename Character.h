@@ -4,6 +4,7 @@
 // C++/C Standard Library Includes
 #include <iostream>
 #include <string>
+#include <ctime> // For Random Damage Add in Attack Dmg Calculus
 
 // User Headers Includes
 #include "Weapon.h"

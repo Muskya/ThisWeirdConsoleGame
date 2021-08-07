@@ -29,9 +29,11 @@ int main()
 	GameManager::GameState g_state = GM_PLAYING; // Initial game state (Playing)
 	// std::wstring path = PROJECT_DIR; // Path to project's working directory (defined in MSVC Project Properties (Preprocessor))
 	Character* character(nullptr); // Initialized after loading/creating a game. DONT FORGET TO DELETE IT.
+	character = new Character("Zagzog", 30, 1, 0, 11, 9, 5, 3);
 
 	// Game Loop
 	while (g_state == GM_PLAYING) {
-		Sequence::startMenuSequence(character);
+		//Sequence::startMenuSequence(character);
+		Sequence::startSequence01(character);
 	}
 }

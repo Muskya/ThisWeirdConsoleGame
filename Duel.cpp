@@ -29,6 +29,7 @@ void Duel::playTurns()
 	while (!player->isDead() || !enemy->isDead()) 
 	{
 		turn_nb++;
+		system("CLS");
 		cout << "-Turn " << turn_nb << "-\n" << flush;
 		if (playerFirst) { // If player had initiative
 			if (!player->isDead()) {
@@ -57,14 +58,12 @@ void Duel::playTurns()
 	else if (enemy->isDead()) {
 
 	}
-	
 }
 
 void Duel::start() 
 {
 	// Thread to play the background duel music
-	std::thread bgm(BeepMusic::DuelThemeBeep);
-	system("CLS");
+	std::thread bgm(BeepMusic::DuelThemeBeepB);
 	this->initiative(playerFirst);
 	while (!d_done)
 	{

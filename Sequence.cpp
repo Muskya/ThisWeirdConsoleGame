@@ -81,7 +81,7 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 		cout << "Wanderers can choose the path of their choice." << endl;
 		cout << "----------------------------------------------" << endl;
 		cout << "Statistics:" << endl;
-		cout << "-Health: 80" << endl;
+		cout << "-Health: 30" << endl;
 		cout << "-Strength: 11" << endl;
 		cout << "-Defense: 9" << endl;
 		cout << "-Chance: 5" << endl;
@@ -96,10 +96,10 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 			cout << "Choose your name: " << flush; cin >> name;
 			system("CLS");
 
-			// HP80, LV1, XP0, STG11, DEF9, CHA5, CLA3
-			character = new Character(name, 80, 1, 0, 11, 9, 5, 3);
+			// HP30, LV1, XP0, STG11, DEF9, CHA5, CLA3
+			character = new Character(name, 30, 1, 0, 11, 9, 5, 3);
 
-			Serialization::Save(PROJECT_DIR, character);
+			Serialization::Save(SAVE_PATH, character);
 			Sequence::startSequence01(character);
 		}
 		else {
@@ -141,8 +141,8 @@ void Sequence::startSequence01(Character* character) {
 	cout << "\nYou lost consciousness hours ago. Take my hand !" << endl;
 	system("pause"); 
 
-	// HP45, LV0, XP0, STG5, DEF4, CHA0, CLA0
-	Character* e_d01 = new Character("???", 45, 0, 0, 5, 4, 0, 0);
+	// HP15, LV0, XP0, STG5, DEF4, CHA0, CLA0
+	Character* e_d01 = new Character("???", 15, 0, 0, 5, 4, 0, 0);
 	Duel* d01 = new Duel(character, e_d01); // Loop withing Duel object
 	cout << "\n";
 	d01->start();

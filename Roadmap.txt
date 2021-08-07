@@ -1,1 +1,3 @@
-- Combat/Fighting class to close-up Sequence01 and move on
+- tight-spaced random attack values during duels
+- duel actions beep sounds
+- duel_bgm-like music made in beeps
