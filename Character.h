@@ -8,6 +8,7 @@
 
 // User Headers Includes
 #include "Weapon.h"
+#include "Inventory.h"
 
 class Character
 {
@@ -27,9 +28,6 @@ public:
 	Character(std::string name, int health);
 	Character(std::string name, int health, int level, int exp, 
 		int stg, int def, int cha, int cla);
-	// Mostly used for enemy entities (big nevermind, enemies have names???)
-	Character(int health, int level, int exp, int stg, int def,
-		int cha, int cla);
 	virtual ~Character();
 
 	void attack(Character* target);

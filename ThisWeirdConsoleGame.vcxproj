@@ -30,6 +30,8 @@
     <ClInclude Include="BeepMusic.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Duel.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="Serialization.h" />
     <ClInclude Include="Weapon.h" />
@@ -37,6 +39,8 @@
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Duel.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sequence.cpp" />
     <ClCompile Include="GameManager.h" />
