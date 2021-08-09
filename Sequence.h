@@ -17,6 +17,11 @@ public:
 	Sequence() = default;
 	~Sequence();
 
+	// DEBUG SEQUENCES
+	/*static void d_DuelSequence();
+	static void d_InventorySequence();*/
+
+	// GAME SEQUENCES
 	static void startMenuSequence(Character* character);
 	static void startNewgameSequence(Character* character);
 	static void startOptionSequence(Character* character);

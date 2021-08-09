@@ -1,9 +1,12 @@
 #ifndef DUEL_H
 #define DUEL_H
 
+// C Standard Library Headers
+#include <thread>
+
+// User-Defined Headers
 #include "Character.h"
 #include "BeepMusic.h"
-#include <thread>
 
 class Duel
 {
@@ -25,8 +28,8 @@ public:
 
 	void start();
 	
-	inline Character* getPlayer() { return player; }
-	inline Character* getEnemy() { return enemy; }
+	inline Character* getPlayer() const { return player; }
+	inline Character* getEnemy() const { return enemy; }
 };
 
 #endif

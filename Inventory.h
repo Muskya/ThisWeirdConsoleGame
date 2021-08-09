@@ -33,6 +33,8 @@ public:
 	void removeItem(Item* item);
 	void useItem(Item* item);
 	void showInventory();
+
+	inline std::vector<Item*> GetItems() const { return items; }
 };
 
 #endif

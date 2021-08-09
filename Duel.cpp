@@ -76,7 +76,7 @@ void Duel::playerAction()
 	cout << "Choose an action: " << endl;
 	cout << "1. Attack" << endl;
 	cout << "2. Defend (not implemented yet)" << endl;
-	cout << "3. Item (not implemented yet)" << endl;
+	cout << "3. Inventory" << endl;
 	cout << "4. Flee (not implemented yet)\n" << endl;
 	do {
 		cin >> input;
@@ -91,7 +91,9 @@ void Duel::playerAction()
 		//player->defend();
 		break;
 	case '3':
-		//player->useItem();
+		Inventory::GetInstance()->showInventory();
+		std::cout << "What item do you want to use ?" << std::endl;
+		// ....
 		break;
 	case '4':
 		//this->flee(player)
@@ -104,7 +106,6 @@ void Duel::playerAction()
 void Duel::enemyAction() 
 {
 	enemy->attack(player); 
-
 	/* Will add more scripts for enemy actions */
 }
 

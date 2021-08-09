@@ -20,7 +20,7 @@ protected:
 
 	Weapon* rightHand;
 
-	virtual void takeDamage(int amount);
+	void takeDamage(int amount);
 
 public:
 	Character() = default;
@@ -28,20 +28,20 @@ public:
 	Character(std::string name, int health);
 	Character(std::string name, int health, int level, int exp, 
 		int stg, int def, int cha, int cla);
-	virtual ~Character();
+	~Character();
 
 	void attack(Character* target);
 	void changeWeapon(Weapon* weap);
 
 	bool isDead() const;
-	virtual void status();
+	void status();
 
 	// Accessors / Mutators
 	std::string getName();
 	int getHealth();  int getLevel(); int getExp();
 	int getStg(); int getDef(); int getCha(); int getCla();
 
-	virtual Weapon* getRightHand();
+	Weapon* getRightHand();
 };
 
 #endif

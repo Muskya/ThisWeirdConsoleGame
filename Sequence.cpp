@@ -1,6 +1,6 @@
 #include "Sequence.h"
-using namespace std;
 
+using namespace std;
 
 Sequence::~Sequence() {}
 
@@ -72,7 +72,7 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 	cout << "Choose an option: " << flush;
 	do { cin >> input; } while (input != '1' && input != '2' && input != '3'
 		&& input != '4');
-	system("CLS"); // Always use "<< flush" before a system("") command
+	system("CLS"); // Try to always use "<< flush" before a system("") command
 
 	switch (input) {
 	case '1':

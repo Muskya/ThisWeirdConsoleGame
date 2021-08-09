@@ -9,6 +9,7 @@
 // User Headers Includes
 #include "Character.h"
 #include "Sequence.h"
+#include "Inventory.h"
 
 class Serialization {
 private:
@@ -39,6 +40,9 @@ public:
 			savefile << "Character name: " << character->getName() << std::endl;
 			savefile << "Character level: " << character->getLevel() << std::endl;
 			savefile << "Experience points: " << character->getExp() << std::endl;
+			savefile << "Slots used in inventory: " <<
+				Inventory::GetInstance()->GetItems().size() << " /16" << std::endl;
+			// 16-sized inventory will changed in the future. Will have to modify here.
 		}
 	}
 

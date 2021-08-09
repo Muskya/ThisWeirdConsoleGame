@@ -1,39 +1,35 @@
-/* C/C++ Standard Library Includes */
+/* C/C++ Standard Library Headers */
 #include <iostream>
 #include <string>
 #include <fstream>
-/* User Headers Includes */
+/* User-Defined Headers */
 	// System
 #include "GameManager.h"
 #include "BeepMusic.h"
+#include "Sequence.h"
 	// Entities
 #include "Character.h"
-	// Sequence
-#include "Sequence.h"
 
-using namespace std; // Will only be using standard namespace
-
+/* MACROS (DEFINES), TYPEDEFS... */
 #define GM_PLAYING GameManager::GameState::Playing
-//#define GM_MENUING GameManager::GameState::Menuing /* These 4 will probably not be needed */
-//#define GM_INVENTORING GameManager::GameState::Inventoring
-//#define GM_QUITTING GameManager::GameState::Quitting
-//#define GM_COMBATTING GameManager::GameState::Combatting
+// SAVE_PATH (Macro made in VS project properties) = savefile location
+
+// Won't be using another namespace whatsoever
+using namespace std;
 
 int main()
 {
-	// Welcome message
 	cout << "Welcome to the weirdest console game !" << endl;
 	cout << "Be ready to embark on a mysterious adventure... :)\n\n\n" << endl;
 
 	// Initializations
 	GameManager::GameState g_state = GM_PLAYING; // Initial game state (Playing)
-	// std::wstring path = PROJECT_DIR; // Path to project's working directory (defined in MSVC Project Properties (Preprocessor))
 	Character* character(nullptr); // Initialized after loading/creating a game. DONT FORGET TO DELETE IT.
-	character = new Character("Zagzog", 30, 1, 0, 11, 9, 5, 3);
 
 	// Game Loop
 	while (g_state == GM_PLAYING) {
-		//Sequence::startMenuSequence(character);
-		Sequence::startSequence01(character);
+		Sequence::startMenuSequence(character);
 	}
+
+	delete character;
 }

@@ -5,11 +5,8 @@ using namespace std;
 Character::Character(std::string name, int health, int level,
 	int exp, int stg, int def, int cha, int cla)
 	: name(name), health(health), level(level), exp(exp),
-	stg(stg), def(def), cha(cha), cla(cla), rightHand(0) 
-{
-	// Single instance of inventory ever in the game.
-	Inventory* inventory = Inventory::GetInstance();
-}
+	stg(stg), def(def), cha(cha), cla(cla), rightHand(0)
+{}
 
 Character::~Character() {
 	//deletes all pointers from this class
