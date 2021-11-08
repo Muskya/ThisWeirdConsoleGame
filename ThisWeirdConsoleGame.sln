@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThisWeirdConsoleGame", "ThisWeirdConsoleGame.vcxproj", "{DD3145DE-5CCC-4121-82DB-E1EED251C443}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		GenerateExe|x64 = GenerateExe|x64
+		GenerateExe|x86 = GenerateExe|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.Debug|x64.ActiveCfg = Debug|x64
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.Debug|x64.Build.0 = Debug|x64
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.Debug|x86.ActiveCfg = Debug|Win32
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.Debug|x86.Build.0 = Debug|Win32
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.GenerateExe|x64.ActiveCfg = GenerateExe|x64
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.GenerateExe|x64.Build.0 = GenerateExe|x64
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.GenerateExe|x86.ActiveCfg = GenerateExe|Win32
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.GenerateExe|x86.Build.0 = GenerateExe|Win32
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.Release|x64.ActiveCfg = Release|x64
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.Release|x64.Build.0 = Release|x64
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.Release|x86.ActiveCfg = Release|Win32
+		{DD3145DE-5CCC-4121-82DB-E1EED251C443}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDE56F75-79B7-44D2-A189-AB1DC76EF369}
+	EndGlobalSection
+EndGlobal

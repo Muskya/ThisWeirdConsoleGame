@@ -99,7 +99,9 @@ characterCreation: // Goto point if class selection confirmation is cancelled
 			// HP30, LV1, XP0, STG11, DEF9, CHA5, CLA3
 			character = new Character(name, 30, 1, 0, 11, 9, 5, 3);
 
-			Serialization::Save(SAVE_PATH, character);
+			// must define SAVE_PATH macro again (either vs project properties or 
+			// directly in source code
+			//Serialization::Save(SAVE_PATH, character);
 			Sequence::startSequence01(character);
 		}
 		else {
